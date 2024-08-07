@@ -1,39 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iammar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/02 17:20:05 by iammar            #+#    #+#             */
-/*   Updated: 2024/08/07 16:01:07 by iammar           ###   ########.fr       */
+/*   Created: 2024/08/07 16:09:13 by iammar            #+#    #+#             */
+/*   Updated: 2024/08/07 16:57:04 by iammar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	int	nb;
-	int	sign;
+	unsigned char	*ptr;
 
-	nb = 0;
-	sign = 1;
-	while (*str <= 32)
+	ptr = s;
+	while (n--)
 	{
-		str++;
+		*ptr++ = (unsigned char)c;
 	}
-	if (*str == '-')
-	{
-		sign = -1;
-		str++;
-	}
-	else if (*str == '+')
-	{
-		str++;
-	}
-	while (*str >= '0' && *str <= '9')
-	{
-		nb = (nb * 10) + (*str - '0');
-		str++;
-	}
-	return (nb * sign);
+	return (s);
 }

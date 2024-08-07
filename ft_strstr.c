@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iammar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/02 17:20:05 by iammar            #+#    #+#             */
-/*   Updated: 2024/08/07 16:01:07 by iammar           ###   ########.fr       */
+/*   Created: 2024/08/07 16:11:03 by iammar            #+#    #+#             */
+/*   Updated: 2024/08/07 16:45:10 by iammar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+char	*ft_strstr(const char *str, const char *to_find)
 {
-	int	nb;
-	int	sign;
+	const char	*tmp_str;
+	const char	*tmp_to_find;
 
-	nb = 0;
-	sign = 1;
-	while (*str <= 32)
+	if (!*to_find)
+		return (str);
+	while (*str)
 	{
+		tmp_str = str;
+		tmp_to_find = to_find;
+		while (*tmp_str && *tmp_to_find && *tmp_str == *tmp_to_find)
+		{
+			tmp_str++;
+			tmp_to_find++;
+		}
+		if (!*tmp_to_find)
+			return (str);
 		str++;
 	}
-	if (*str == '-')
-	{
-		sign = -1;
-		str++;
-	}
-	else if (*str == '+')
-	{
-		str++;
-	}
-	while (*str >= '0' && *str <= '9')
-	{
-		nb = (nb * 10) + (*str - '0');
-		str++;
-	}
-	return (nb * sign);
+	return (0);
 }
