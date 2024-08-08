@@ -1,39 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iammar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/02 17:20:05 by iammar            #+#    #+#             */
-/*   Updated: 2024/08/08 15:14:50 by iammar           ###   ########.fr       */
+/*   Created: 2024/08/08 15:16:11 by iammar            #+#    #+#             */
+/*   Updated: 2024/08/08 15:20:36 by iammar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+void	bzero(void *s, size_t n)
 {
-	int	nb;
-	int	sign;
+	unsigned char	*dest;
+	size_t			i;
 
-	nb = 0;
-	sign = 1;
-	while (*str <= 32)
-	{
-		str++;
-	}
-	if (*str == '-')
-	{
-		sign = -1;
-		str++;
-	}
-	else if (*str == '+')
-	{
-		str++;
-	}
-	while (*str >= '0' && *str <= '9')
-	{
-		nb = (nb * 10) + (*str - '0');
-		str++;
-	}
-	return (nb * sign);
+	dest = s;
+	i = 0;
+	while (i++ < n)
+		*dest++ = 0;
 }
