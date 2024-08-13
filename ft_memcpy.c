@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iammar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/07 16:11:03 by iammar            #+#    #+#             */
-/*   Updated: 2024/08/13 21:26:01 by iammar           ###   ########.fr       */
+/*   Created: 2024/08/13 21:05:59 by iammar            #+#    #+#             */
+/*   Updated: 2024/08/13 21:24:45 by iammar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	char	*tmp_str;
-	char	*tmp_to_find;
+	const char	*csrc;
+	char		*cdest;
+	size_t		i;
 
-	if (!*to_find)
-		return (str);
-	while (*str)
+	cdest = (char *)dest;
+	csrc = (const char *)src;
+	i = 0;
+	while (i < n)
 	{
-		tmp_str = str;
-		tmp_to_find = to_find;
-		while (*tmp_str && *tmp_to_find && *tmp_str == *tmp_to_find)
-		{
-			tmp_str++;
-			tmp_to_find++;
-		}
-		if (!*tmp_to_find)
-			return (str);
-		str++;
+		cdest[i] = csrc[i];
+		i++;
 	}
-	return (0);
+	return (dest);
 }
