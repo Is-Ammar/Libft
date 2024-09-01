@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iammar <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: iammar <iammar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 16:11:03 by iammar            #+#    #+#             */
-/*   Updated: 2024/08/13 21:26:01 by iammar           ###   ########.fr       */
+/*   Updated: 2024/08/31 21:18:24 by iammar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strstr(char *str, char *to_find)
 {

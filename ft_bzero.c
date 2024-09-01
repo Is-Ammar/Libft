@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iammar <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: iammar <iammar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 15:16:11 by iammar            #+#    #+#             */
-/*   Updated: 2024/08/08 15:20:36 by iammar           ###   ########.fr       */
+/*   Updated: 2024/08/31 21:40:06 by iammar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	bzero(void *s, size_t n)
+#include "libft.h"
+
+void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*dest;
 	size_t			i;

@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iammar <iammar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/05 15:49:54 by iammar            #+#    #+#             */
-/*   Updated: 2024/08/31 21:26:34 by iammar           ###   ########.fr       */
+/*   Created: 2024/08/31 20:50:42 by iammar            #+#    #+#             */
+/*   Updated: 2024/08/31 21:18:34 by iammar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dst, const char *src)
-{
-	char	*tmp;
+#include "libft.h"
 
-	tmp = dst;
-	while (*src)
+char	*ft_strcat(char *dest, const char *src)
+{
+	int	len;
+	int	i;
+
+	i = 0;
+	len = ft_strlen(dest);
+	while (src[i])
 	{
-		*tmp = *src;
-		src++;
-		tmp++;
+		dest[len + i] = src[i];
+		i++;
 	}
-	*tmp = '\0';
-	return (dst);
+	dest[len + i] = '\0';
+	return (dest);
 }
