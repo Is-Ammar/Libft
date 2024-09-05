@@ -6,7 +6,7 @@
 /*   By: iammar <iammar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 21:10:23 by iammar            #+#    #+#             */
-/*   Updated: 2024/09/02 15:43:43 by iammar           ###   ########.fr       */
+/*   Updated: 2024/09/05 21:34:18 by iammar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ void	ft_bzero(void *s, size_t n);
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 char	*ft_strncat(char *dest, const char *src, size_t n);
-
+char	*ft_strchr(const char *s, int c);
 #endif
