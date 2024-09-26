@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iammar <iammar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/08 15:16:11 by iammar            #+#    #+#             */
-/*   Updated: 2024/09/26 18:34:37 by iammar           ###   ########.fr       */
+/*   Created: 2024/09/26 18:01:09 by iammar            #+#    #+#             */
+/*   Updated: 2024/09/26 18:36:34 by iammar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strnew(size_t size)
 {
-	unsigned char	*dest;
-	size_t			i;
+	char	*s;
 
-	dest = (unsigned char *)s;
-	i = 0;
-	while (i++ < n)
-		*dest++ = 0;
+	s = (char *)malloc((size + 1) * sizeof(char));
+	if (s == NULL)
+	{
+		return (NULL);
+	}
+	ft_bzero(s, size + 1);
+	return (s);
 }
