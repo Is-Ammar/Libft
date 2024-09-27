@@ -1,39 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iammar <iammar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/26 22:34:23 by iammar            #+#    #+#             */
-/*   Updated: 2024/09/27 15:40:50 by iammar           ###   ########.fr       */
+/*   Created: 2024/09/27 15:43:27 by iammar            #+#    #+#             */
+/*   Updated: 2024/09/27 15:55:23 by iammar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	unsigned int	i;
-	char			*sub;
+	char	*str;
 
-	if (!s)
+	str = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	if (str == NULL)
 		return (NULL);
-	sub = (char *)malloc((len + 1) * sizeof(char));
-	if (sub == NULL)
-		return (NULL);
-	if (start >= ft_strlen(s))
-	{
-		sub[0] = '\0';
-		return (sub);
-	}
-	i = 0;
-	while (s[start] && i < len)
-	{
-		sub[i] = s[start];
-		i++;
-		start++;
-	}
-	sub[i] = '\0';
-	return (sub);
+	ft_strcpy(str, s1);
+	ft_strcat(str, s2);
+	return (str);
 }
