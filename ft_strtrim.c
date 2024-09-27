@@ -26,8 +26,8 @@ char	*ft_strtrim(char const *s)
 	{
 		start++;
 	}
-	while (end > start && (s[end - 1] == ' ' || s[end - 1] == '\n'
-			|| s[end - 1] == '\t'))
+	while (end > start && (s[end - 1] == ' ' || s[end - 1] == '\n' || s[end
+			- 1] == '\t'))
 	{
 		end--;
 	}
