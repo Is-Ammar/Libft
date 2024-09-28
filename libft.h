@@ -6,7 +6,7 @@
 /*   By: iammar <iammar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 21:10:23 by iammar            #+#    #+#             */
-/*   Updated: 2024/09/28 18:33:24 by iammar           ###   ########.fr       */
+/*   Updated: 2024/09/28 19:20:55 by iammar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,6 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 void	ft_putchar(char c);
 void	ft_putstr(char const *s);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char const *s, int fd);
 #endif
