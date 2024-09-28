@@ -6,7 +6,7 @@
 /*   By: iammar <iammar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 21:10:23 by iammar            #+#    #+#             */
-/*   Updated: 2024/09/26 17:25:56 by iammar           ###   ########.fr       */
+/*   Updated: 2024/09/28 18:33:24 by iammar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
+# include <unistd.h>
 
 char	*ft_strstr(char *str, char *to_find);
 size_t	ft_strlen(const char *str);
@@ -45,4 +46,6 @@ char	*ft_strrchr(const char *s, int c);
 char	*ft_substr(const char *src, size_t m, size_t n);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+void	ft_putchar(char c);
+void	ft_putstr(char const *s);
 #endif

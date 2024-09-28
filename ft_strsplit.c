@@ -6,15 +6,13 @@
 /*   By: iammar <iammar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 16:22:08 by iammar            #+#    #+#             */
-/*   Updated: 2024/09/27 21:33:04 by iammar           ###   ########.fr       */
+/*   Updated: 2024/09/28 18:04:53 by iammar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-#include <string.h>
 
-static int	count_words(const char *s, char c)
+int	count_words(const char *s, char c)
 {
 	int	count;
 	int	in_word;
@@ -29,13 +27,15 @@ static int	count_words(const char *s, char c)
 			count++;
 		}
 		if (*s == c)
+		{
 			in_word = 0;
+		}
 		s++;
 	}
 	return (count);
 }
 
-static char	*get_next_word(const char **s, char c)
+char	*get_next_word(const char **s, char c)
 {
 	const char	*start;
 	int			length;
@@ -61,7 +61,7 @@ static char	*get_next_word(const char **s, char c)
 	return (word);
 }
 
-static void	free_split(char **result, int count)
+void	free_split(char **result, int count)
 {
 	int	j;
 
@@ -102,10 +102,11 @@ char	**ft_strsplit(char const *s, char c)
 }
 
 // int main() {
-//     char **result = ft_strsplit("*hello*fellow***students*", '*');
+//     char **result = ft_strsplit("%%out%%%%%%%%%%%aAs%%%a%%test%%%", '%');
 //     if (result) {
 //         for (int i = 0; result[i] != NULL; i++) {
-//             printf("%s\n", result[i]);
+//             printf("%s", result[i]);
+// 			printf(" ");
 //             free(result[i]);
 //         }
 //         free(result);

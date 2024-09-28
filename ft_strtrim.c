@@ -6,7 +6,7 @@
 /*   By: iammar <iammar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 15:56:42 by iammar            #+#    #+#             */
-/*   Updated: 2024/09/27 16:18:49 by iammar           ###   ########.fr       */
+/*   Updated: 2024/09/28 18:35:30 by iammar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ char	*ft_strtrim(char const *s)
 	{
 		start++;
 	}
-	while (end > start && (s[end - 1] == ' ' || s[end - 1] == '\n' || s[end
-			- 1] == '\t'))
+	while (end > start && (s[end - 1] == ' ' || s[end - 1] == '\n'
+			|| s[end - 1] == '\t'))
 	{
 		end--;
 	}
