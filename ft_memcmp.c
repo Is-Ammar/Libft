@@ -6,7 +6,7 @@
 /*   By: iammar <iammar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 16:33:00 by iammar            #+#    #+#             */
-/*   Updated: 2024/09/26 16:49:22 by iammar           ###   ########.fr       */
+/*   Updated: 2024/09/29 16:55:07 by iammar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	const char	*ss1;
-	const char	*ss2;
+	const unsigned char	*ss1;
+	const unsigned char	*ss2;
 	size_t		i;
 
 	if (n == 0)
