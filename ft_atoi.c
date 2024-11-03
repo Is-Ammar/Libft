@@ -3,37 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iammar <iammar@student.42.fr>              +#+  +:+       +#+        */
+/*   By: iammar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/02 17:20:05 by iammar            #+#    #+#             */
-/*   Updated: 2024/08/31 21:26:08 by iammar           ###   ########.fr       */
+/*   Created: 2024/10/23 18:15:09 by iammar            #+#    #+#             */
+/*   Updated: 2024/10/31 16:47:39 by iammar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
-{
-	int	nb;
-	int	sign;
+#include "libft.h"
 
-	nb = 0;
+int	ft_atoi(const char *str)
+{
+	long int	result;
+	int			sign;
+
+	result = 0;
 	sign = 1;
-	while (*str <= 32)
-	{
+	while (*str == ' ' || (*str >= 9 && *str <= 13))
 		str++;
-	}
 	if (*str == '-')
 	{
 		sign = -1;
 		str++;
 	}
 	else if (*str == '+')
-	{
 		str++;
-	}
 	while (*str >= '0' && *str <= '9')
 	{
-		nb = (nb * 10) + (*str - '0');
-		str++;
+		result = result * 10 + (*str++ - '0');
 	}
-	return (nb * sign);
+	return ((int)sign * result);
 }

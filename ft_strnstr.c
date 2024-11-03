@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iammar <iammar@student.42.fr>              +#+  +:+       +#+        */
+/*   By: iammar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/05 22:06:14 by iammar            #+#    #+#             */
-/*   Updated: 2024/09/06 00:39:08 by iammar           ###   ########.fr       */
+/*   Created: 2024/10/23 18:18:27 by iammar            #+#    #+#             */
+/*   Updated: 2024/10/31 16:50:07 by iammar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 {

@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iammar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 18:15:27 by iammar            #+#    #+#             */
-/*   Updated: 2024/10/31 16:48:18 by iammar           ###   ########.fr       */
+/*   Created: 2024/09/30 22:19:01 by iammar            #+#    #+#             */
+/*   Updated: 2024/10/31 16:48:43 by iammar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int c)
+#include "libft.h"
+
+void	ft_lstadd_front(t_list **alst, t_list *new)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0'
-			&& c <= '9'))
-		return (1);
-	else
-		return (0);
+	if (!new)
+		return ;
+	new->next = *alst;
+	*alst = new;
 }

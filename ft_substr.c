@@ -3,35 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iammar <iammar@student.42.fr>              +#+  +:+       +#+        */
+/*   By: iammar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 13:57:54 by iammar            #+#    #+#             */
-/*   Updated: 2024/09/17 17:40:12 by iammar           ###   ########.fr       */
+/*   Created: 2024/10/23 18:12:36 by iammar            #+#    #+#             */
+/*   Updated: 2024/10/31 16:50:16 by iammar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(const char *src, size_t m, size_t n)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	size_t	len;
+	size_t	start_copy;
 	size_t	i;
 	char	*dst;
 
-	len = n - m;
-	if (m > ft_strlen(src))
-	{
+	if (!s)
 		return (NULL);
-	}
 	dst = malloc(sizeof(char) * (len + 1));
 	if (dst == NULL)
 	{
 		return (NULL);
 	}
+	if (start >= ft_strlen(s))
+	{
+		dst[0] = '\0';
+		return (dst);
+	}
 	i = 0;
+	start_copy = (size_t)start;
 	while (i < len)
 	{
-		dst[i] = src[m + i];
+		dst[i] = s[start_copy + i];
 		i++;
 	}
 	dst[i] = '\0';

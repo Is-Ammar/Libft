@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iammar <iammar@student.42.fr>              +#+  +:+       +#+        */
+/*   By: iammar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/28 17:12:17 by iammar            #+#    #+#             */
-/*   Updated: 2024/09/28 18:15:50 by iammar           ###   ########.fr       */
+/*   Created: 2024/10/23 18:16:08 by iammar            #+#    #+#             */
+/*   Updated: 2024/10/31 16:48:35 by iammar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_intlen(int n)
+static int	ft_intlen(int n)
 {
 	int	len;
 
@@ -31,7 +31,7 @@ int	ft_intlen(int n)
 	return (len);
 }
 
-void	ft_prepare(char *s, int *n)
+static void	ft_prepare(char *s, int *n)
 {
 	if (*n < 0)
 	{
@@ -52,6 +52,8 @@ char	*ft_itoa(int n)
 	char	*s;
 	int		i;
 
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	len = ft_intlen(n);
 	s = (char *)malloc(len + 1);
 	if (!s)
